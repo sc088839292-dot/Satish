@@ -1,213 +1,192 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f8c7e7">
-<title>For Manya 💗</title>
-
+<title>Satish ❤️ Manya</title>
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;background:linear-gradient(145deg,#ffd8eb,#ead9ff,#fff0f7);
- font-family:Georgia,serif;color:#80345f;
+ margin:0;color:#81375f;
+ font-family:Georgia,"Noto Serif",serif;
+ background:linear-gradient(145deg,#f7c7e9,#e8d5ff,#fff0f7);
 }
 .page{
- display:none;min-height:100dvh;padding:28px 22px 55px;
- text-align:center;align-items:center;justify-content:center;
- flex-direction:column;position:relative;overflow:hidden;
+ display:none;min-height:100dvh;padding:30px 22px 45px;
+ align-items:center;justify-content:center;flex-direction:column;
+ text-align:center;position:relative;overflow:hidden;
 }
-.page.active{display:flex;animation:fade .5s ease}
-@keyframes fade{
- from{opacity:0;transform:translateY(12px)}
- to{opacity:1;transform:translateY(0)}
-}
-h1{font-size:29px;line-height:1.35;margin:16px 0}
-p{font-size:16px;line-height:1.7;max-width:340px}
-.sub{font-style:italic;color:#a14c82}
-.bear{font-size:82px;margin:8px}
+.page.active{display:flex;animation:fade .55s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}
+to{opacity:1;transform:translateY(0)}}
+h1{font-size:28px;line-height:1.5;margin:15px 0}
+p{font-size:16px;line-height:1.9;max-width:370px}
+.bear{font-size:76px;margin:8px}
+.sub{font-style:italic;color:#a24b83}
 button{
- border:0;border-radius:28px;padding:13px 22px;margin:7px;
- font-size:15px;background:#d84f98;color:white;
- box-shadow:0 5px 15px #bd5d9540;cursor:pointer;
+ border:0;border-radius:30px;padding:13px 23px;margin:7px;
+ background:#d64e98;color:white;font-size:15px;
+ box-shadow:0 5px 15px #bd5d9540;cursor:pointer
 }
-button.alt{background:white;color:#a34282}
-button:active{transform:scale(.97)}
-.heart{
- position:fixed;bottom:-30px;pointer-events:none;
- animation:float 7s linear infinite;opacity:.65;
+.alt{background:white;color:#a34282}
+.heart{position:fixed;bottom:-30px;pointer-events:none;
+ animation:float 7s linear infinite;opacity:.7}
+@keyframes float{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+.card{
+ background:#fff9fd;border:5px solid white;border-radius:20px;
+ padding:23px 19px;width:min(100%,390px);
+ box-shadow:0 8px 24px #a44c8430
 }
-@keyframes float{
- to{transform:translateY(-110vh) rotate(30deg);opacity:0}
-}
-.photo{
- width:min(245px,75vw);height:245px;border:7px solid white;
- border-radius:20px;background:#fff2f8;
- box-shadow:0 8px 24px #a44c8430;
- display:grid;place-items:center;overflow:hidden;font-size:55px;
-}
-.photo img{width:100%;height:100%;object-fit:cover}
-input[type=file]{
- max-width:100%;width:100%;font-size:13px;
- margin:12px 0;background:#fff9;
- padding:10px;border-radius:12px;
-}
+.card p{text-align:left;font-size:15px;line-height:1.95}
 .envelope{
- width:min(290px,85vw);height:175px;background:#ed9bbd;
- margin:30px 0;position:relative;border-radius:6px;
- box-shadow:0 10px 22px #a74d7730;cursor:pointer;
+ width:min(290px,85vw);height:170px;background:#ed9bbd;
+ margin:30px 0;position:relative;border-radius:7px;cursor:pointer;
 }
 .envelope:before{
- content:"";position:absolute;inset:0;
- background:#f7c0d7;clip-path:polygon(0 0,100% 0,50% 65%);
- z-index:3;transition:transform .6s;transform-origin:top;
+ content:"";position:absolute;inset:0;background:#f7c0d7;
+ clip-path:polygon(0 0,100% 0,50% 65%);
+ z-index:3;transform-origin:top;transition:transform .6s
 }
 .envelope.open:before{transform:rotateX(180deg)}
 .envelope:after{
  content:"";position:absolute;inset:0;background:#d96e9b;
- clip-path:polygon(0 0,50% 55%,0 100%);z-index:2;
+ clip-path:polygon(0 0,50% 55%,0 100%);z-index:2
 }
 .letter{
- position:absolute;left:5%;width:90%;height:150px;bottom:8px;
- background:#fffdf9;border-radius:8px;padding:12px;
- z-index:1;transition:transform .8s;
+ position:absolute;left:5%;width:90%;height:145px;bottom:8px;
+ background:white;border-radius:8px;padding:12px;z-index:1;
+ transition:transform .8s
 }
 .envelope.open .letter{transform:translateY(-105px);z-index:4}
-.seal{
- position:absolute;z-index:4;left:calc(50% - 17px);
- top:68px;background:#c7467d;color:white;
- width:34px;height:34px;border-radius:50%;
- display:grid;place-items:center;
+.seal{position:absolute;z-index:4;left:calc(50% - 17px);
+ top:68px;background:#c7467d;color:white;width:34px;height:34px;
+ border-radius:50%;display:grid;place-items:center}
+.gallery{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:12px;width:min(100%,370px);margin:15px 0
 }
-.note{font-size:12px;color:#915479}
+.gallery figure{margin:0;background:white;padding:6px;
+ border-radius:12px;box-shadow:0 4px 12px #8c487522}
+.gallery img{width:100%;height:150px;object-fit:cover;
+ border-radius:8px;display:block}
+.gallery figcaption{font-size:12px;padding:7px 2px}
+.note{font-size:12px}
 </style>
 </head>
-
 <body>
 
 <div id="hearts"></div>
 
 <section class="page active" id="p0">
  <div class="bear">🧸💗🧸</div>
- <h1>Manya, I Have Something to Say... 💌</h1>
- <p class="sub">I made this little page just for you.</p>
- <button onclick="go(1)">Open my message 💗</button>
+ <h1>Manya, ek baar meri baat padh lena… ❤️</h1>
+ <p class="sub">Maine ye chhota sa page sirf tumhare liye banaya hai.</p>
+ <button onclick="go(1)">Meri baat sunogi? 💌</button>
 </section>
 
 <section class="page" id="p1">
  <div class="bear">🥺🐻</div>
- <h1>I'm Sorry, Manya ❤️</h1>
- <p>I am genuinely sorry if my words or actions hurt you. I want to understand how you feel.</p>
- <button onclick="go(2)">Next 💌</button>
+ <h1>Mujhse galti hui, Manya</h1>
+ <div class="card">
+  <p>Manya, main tumse pyaar karta hoon. Mujhe pata hai ki maine tumse jis tarah baat ki, woh bilkul galat tha. Maine gusse mein tumhare liye abusive words use kiye, aur mujhe aisa bilkul nahi karna chahiye tha.</p>
+ </div>
+ <button onclick="go(2)">Aage padhna 💗</button>
 </section>
 
 <section class="page" id="p2">
- <div class="bear">🐻‍❄️🌷</div>
- <h1>You Matter to Me</h1>
- <p class="sub">I know that saying sorry isn't enough. I'll try to learn from my mistakes and do better.</p>
- <button onclick="go(3)">One little letter 💗</button>
+ <div class="bear">🧸🌷</div>
+ <h1>Tumhe takleef dena galat tha</h1>
+ <div class="card">
+  <p>Main apni galti ko kisi bhi bahane se sahi nahi thahrana chahta. Tum mujh par bharosa karti thi, aur mujhe tumse izzat se baat karni chahiye thi. Lekin maine tumhe hi takleef di. Is baat ka mujhe sach mein afsos hai.</p>
+  <p>Sirf sorry bol dene se meri kahi hui baatein wapas nahi ho jaati. Main samajhta hoon ki bharosa dobara banane mein waqt lag sakta hai.</p>
+ </div>
+ <button onclick="go(3)">Kuch yaadein… 💗</button>
 </section>
 
 <section class="page" id="p3">
- <h1>A Letter for Manya 💌</h1>
- <p class="sub">Tap the envelope to open it.</p>
- <div class="envelope" id="env" onclick="openLetter()">
-  <div class="letter">
-   <h3>Dear Manya 💗</h3>
-   <p id="letterText" style="font-size:13px;line-height:1.5">
-    I'm sorry for hurting you. I respect your feelings and hope we can talk whenever you're ready.
-   </p>
-   <p style="font-size:13px">— Satish ❤️</p>
-  </div>
-  <div class="seal">♥</div>
+ <div class="bear">💗🌸💗</div>
+ <h1>Hamari kuch yaadein</h1>
+ <p class="sub">Ye pal mere liye bahut khaas rahe hain, Manya.</p>
+ <div class="gallery">
+  <figure><img src="photo1.jpg" alt="Yaad 1"><figcaption>Ek pyaari si yaad ❤️</figcaption></figure>
+  <figure><img src="photo2.jpg" alt="Yaad 2"><figcaption>Hamare pal 💗</figcaption></figure>
+  <figure><img src="photo3.jpg" alt="Yaad 3"><figcaption>Ek aur yaad 🌸</figcaption></figure>
+  <figure><img src="photo4.jpg" alt="Yaad 4"><figcaption>Jo khaas hai 🧸</figcaption></figure>
+  <figure><img src="photo5.jpg" alt="Yaad 5"><figcaption>Yaad rahega ❤️</figcaption></figure>
+  <figure><img src="photo6.jpg" alt="Yaad 6"><figcaption>Dil ke kareeb 💌</figcaption></figure>
  </div>
- <p id="letterHint" class="note">Tap to open</p>
- <button onclick="go(4)">Next 🌸</button>
+ <button onclick="go(4)">Ek aakhri baat 💌</button>
 </section>
 
 <section class="page" id="p4">
- <div class="bear">💗🌸💗</div>
- <h1>A Little Memory</h1>
- <div class="photo" id="photoBox">📷💗</div>
- <label for="photoInput">Choose a photo from your gallery</label>
- <input type="file" id="photoInput" accept="image/*">
- <p class="note">Photo preview is private to this browser until you add the image to your published website.</p>
- <button onclick="go(5)">One last thing 💌</button>
+ <div class="bear">🐻💌</div>
+ <h1>Tumhare naam ek khat</h1>
+ <p class="sub">Envelope par tap karke kholna.</p>
+ <div class="envelope" id="env" onclick="openLetter()">
+  <div class="letter">
+   <h3>Dear Manya ❤️</h3>
+   <p style="font-size:13px">Mujhe apni galti ka sach mein afsos hai. — Satish</p>
+  </div>
+  <div class="seal">♥</div>
+ </div>
+ <p id="hint" class="note">Tap to open 💌</p>
+ <button onclick="go(5)">Mera dil kya kehna chahta hai…</button>
 </section>
 
 <section class="page" id="p5">
- <div class="bear">🥹💗🧸</div>
- <h1>Manya, Can We Talk?</h1>
- <p class="sub">I'd appreciate a chance to listen, whenever you're comfortable. There's no pressure to reply right away.</p>
- <button onclick="go(6)">I'd like to talk 💗</button>
- <button class="alt" onclick="go(7)">I need some time</button>
+ <div class="bear">🥹💗</div>
+ <h1>Dil se maafi, Manya</h1>
+ <div class="card">
+  <p>Maine tumhari har cheez sambhal kar rakhi hai, kyunki tum mere liye bahut khaas ho. Mujhe hamare saath bitaye hue pal yaad aate hain. Tumhare saath baatein karna, chhoti-chhoti baaton par khush hona… mere liye ye sab bahut maayne rakhta tha.</p>
+  <p>Main tumhara intezaar karta rahunga, lekin tum par kisi bhi tarah ka pressure nahi daalunga. Agar tum mujhse baat nahi karna chahti, toh main tumhare faisle ki izzat karunga.</p>
+ </div>
+ <button onclick="go(6)">Aakhri paighaam ❤️</button>
 </section>
 
 <section class="page" id="p6">
  <div class="bear">🌷🧸💖</div>
- <h1>Thank You, Manya ❤️</h1>
- <p>Thank you for hearing me out. I'll do my best to show that I mean what I said.</p>
- <p class="sub">With a sincere apology, Satish 💌</p>
- <button onclick="go(0)">Read again</button>
+ <h1>Manya, ek nayi shuruaat…</h1>
+ <div class="card">
+  <p>Bas ek baat dil se kehna chahta hoon: mujhe maaf kar dena agar kabhi tum kar sako. Main apne gusse aur apne bolne ke tareeke ko sudharna chahta hoon. Sirf tumse kehne ke liye nahi, balki sach mein ek behtar insaan banne ke liye.</p>
+  <p>Maine galti ki hai, aur uski zimmedari meri hai.</p>
+  <p>Manya, agar kabhi tum bhi chaho, toh hum is rishte ko ek naye sire se shuru karne ke baare mein baat kar sakte hain. Main apne badlav ko sirf baaton se nahi, balki apne amal se sabit karna chahta hoon.</p>
+  <p><b>Dil se sorry, Manya. Main tumse pyaar karta hoon. ❤️</b></p>
+  <p>— Satish</p>
+ </div>
+ <button onclick="go(7)">Ek aakhri baat 💗</button>
 </section>
 
 <section class="page" id="p7">
- <div class="bear">🫶🌸</div>
- <h1>That's Okay, Manya</h1>
- <p>I respect your feelings and your need for time. Take care of yourself. 💗</p>
- <p class="sub">— Satish</p>
- <button onclick="go(0)">Back to the beginning</button>
+ <div class="bear">🧸💖🌷</div>
+ <h1>Manya, tumhari marzi sabse zaroori hai</h1>
+ <p class="sub">Main tumhari feelings aur tumhare faisle ki izzat karunga. Tumhe abhi jawab dene ki zaroorat nahi hai.</p>
+ <button onclick="go(0)">Shuru se dobara padho 💌</button>
+ <p class="note">Hamesha izzat aur sachchai ke saath — Satish ❤️</p>
 </section>
 
 <script>
-let current=0;
-
 function go(n){
- document.getElementById("p"+current).classList.remove("active");
- current=n;
- document.getElementById("p"+current).classList.add("active");
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ document.getElementById("p"+n).classList.add("active");
  window.scrollTo(0,0);
 }
-
 function openLetter(){
  document.getElementById("env").classList.add("open");
- document.getElementById("letterHint").textContent=
- "A sincere apology, from Satish ❤️";
+ document.getElementById("hint").textContent="Dil se likha hua khat ❤️";
 }
-
-const heartBox=document.getElementById("hearts");
+const box=document.getElementById("hearts");
 const symbols=["💗","💕","🌸","💖","✨"];
-
 for(let i=0;i<20;i++){
- const h=document.createElement("span");
- h.className="heart";
- h.textContent=symbols[i%symbols.length];
+ let h=document.createElement("span");
+ h.className="heart";h.textContent=symbols[i%symbols.length];
  h.style.left=(i*37%100)+"%";
  h.style.fontSize=(16+i%15)+"px";
  h.style.animationDelay=(i%7)+"s";
  h.style.animationDuration=(5+i%5)+"s";
- heartBox.appendChild(h);
+ box.appendChild(h);
 }
-
-document.getElementById("photoInput").addEventListener("change",function(){
- const file=this.files[0];
- if(!file)return;
- if(!file.type.startsWith("image/"))return;
- if(file.size>5*1024*1024){
-   alert("Please choose a photo smaller than 5 MB.");
-   this.value="";
-   return;
- }
- const url=URL.createObjectURL(file);
- const box=document.getElementById("photoBox");
- box.innerHTML="";
- const img=document.createElement("img");
- img.src=url;
- img.alt="Selected photo preview";
- box.appendChild(img);
-});
 </script>
-
 </body>
-</html>
+   </html>
+  

@@ -3,190 +3,254 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Satish ❤️ Manya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Manya 💗</title>
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;color:#81375f;
- font-family:Georgia,"Noto Serif",serif;
- background:linear-gradient(145deg,#f7c7e9,#e8d5ff,#fff0f7);
+ margin:0;min-height:100vh;font-family:"Trebuchet MS",Arial,sans-serif;
+ color:#71334f;background:linear-gradient(145deg,#ffe0ee,#f4e4ff,#fff2f7);
+ overflow-x:hidden
 }
+button{font:inherit;cursor:pointer}
+#musicGate{
+ position:fixed;inset:0;z-index:1000;
+ display:flex;align-items:center;justify-content:center;
+ padding:20px;background:linear-gradient(145deg,#ffe0ee,#f4e4ff,#fff2f7)
+}
+.gate-card{
+ width:min(100%,410px);text-align:center;background:#ffffffdf;
+ border:1px solid white;border-radius:28px;padding:30px 23px;
+ box-shadow:0 15px 50px #a7437825
+}
+.gate-emoji{font-size:65px}
+.gate-card h1{color:#c74480;font-size:29px}
+.gate-card p{line-height:1.8}
+.btn{
+ border:0;border-radius:28px;padding:13px 21px;
+ background:linear-gradient(110deg,#ff77a9,#d982db);
+ color:white;font-weight:bold;box-shadow:0 5px 16px #d75c9825;
+ margin:8px 3px
+}
+.btn:disabled{opacity:.65}
+#musicBtn{
+ position:fixed;right:12px;top:12px;z-index:20;
+ border:1px solid #fff;border-radius:30px;background:#ffffffdf;
+ color:#a8326b;padding:10px 13px
+}
+.wrap{width:min(92%,540px);margin:76px auto 35px;position:relative;z-index:1}
 .page{
- display:none;min-height:100dvh;padding:30px 22px 45px;
- align-items:center;justify-content:center;flex-direction:column;
- text-align:center;position:relative;overflow:hidden;
+ display:none;text-align:center;background:#ffffffc9;border:1px solid #fff;
+ border-radius:27px;padding:28px 21px;box-shadow:0 14px 45px #a7437820;
+ animation:appear .5s ease
 }
-.page.active{display:flex;animation:fade .55s ease}
-@keyframes fade{from{opacity:0;transform:translateY(12px)}
-to{opacity:1;transform:translateY(0)}}
-h1{font-size:28px;line-height:1.5;margin:15px 0}
-p{font-size:16px;line-height:1.9;max-width:370px}
-.bear{font-size:76px;margin:8px}
-.sub{font-style:italic;color:#a24b83}
-button{
- border:0;border-radius:30px;padding:13px 23px;margin:7px;
- background:#d64e98;color:white;font-size:15px;
- box-shadow:0 5px 15px #bd5d9540;cursor:pointer
-}
-.alt{background:white;color:#a34282}
-.heart{position:fixed;bottom:-30px;pointer-events:none;
- animation:float 7s linear infinite;opacity:.7}
-@keyframes float{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
-.card{
- background:#fff9fd;border:5px solid white;border-radius:20px;
- padding:23px 19px;width:min(100%,390px);
- box-shadow:0 8px 24px #a44c8430
-}
-.card p{text-align:left;font-size:15px;line-height:1.95}
-.envelope{
- width:min(290px,85vw);height:170px;background:#ed9bbd;
- margin:30px 0;position:relative;border-radius:7px;cursor:pointer;
-}
-.envelope:before{
- content:"";position:absolute;inset:0;background:#f7c0d7;
- clip-path:polygon(0 0,100% 0,50% 65%);
- z-index:3;transform-origin:top;transition:transform .6s
-}
-.envelope.open:before{transform:rotateX(180deg)}
-.envelope:after{
- content:"";position:absolute;inset:0;background:#d96e9b;
- clip-path:polygon(0 0,50% 55%,0 100%);z-index:2
-}
+.page.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.emoji{font-size:55px;margin:4px 0 16px}
+h1,h2{color:#c74480}
+h2{font-size:25px}
+p{font-size:16px;line-height:1.9}
 .letter{
- position:absolute;left:5%;width:90%;height:145px;bottom:8px;
- background:white;border-radius:8px;padding:12px;z-index:1;
- transition:transform .8s
+ background:#fff8fb;border:1px dashed #eaa2c5;border-radius:18px;
+ padding:20px;text-align:left;line-height:1.9;white-space:pre-line
 }
-.envelope.open .letter{transform:translateY(-105px);z-index:4}
-.seal{position:absolute;z-index:4;left:calc(50% - 17px);
- top:68px;background:#c7467d;color:white;width:34px;height:34px;
- border-radius:50%;display:grid;place-items:center}
-.gallery{
- display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
- gap:12px;width:min(100%,370px);margin:15px 0
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gallery img{
+ width:100%;height:190px;object-fit:cover;border-radius:15px;
+ background:#f9e2ef;border:2px solid white
 }
-.gallery figure{margin:0;background:white;padding:6px;
- border-radius:12px;box-shadow:0 4px 12px #8c487522}
-.gallery img{width:100%;height:150px;object-fit:cover;
- border-radius:8px;display:block}
-.gallery figcaption{font-size:12px;padding:7px 2px}
-.note{font-size:12px}
+.caption,.footer{font-size:12px;color:#a36a87}
+.dots{margin-top:18px;color:#b46a91;font-size:13px}
+.heart{
+ position:fixed;bottom:-35px;z-index:0;pointer-events:none;
+ animation:floatUp linear forwards;opacity:.55
+}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+.big-heart{font-size:65px;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
 </style>
 </head>
 <body>
 
-<div id="hearts"></div>
+<audio id="bgMusic" src="music.m4a" loop preload="auto"></audio>
 
-<section class="page active" id="p0">
- <div class="bear">🧸💗🧸</div>
- <h1>Manya, ek baar meri baat padh lena… ❤️</h1>
- <p class="sub">Maine ye chhota sa page sirf tumhare liye banaya hai.</p>
- <button onclick="go(1)">Meri baat sunogi? 💌</button>
-</section>
-
-<section class="page" id="p1">
- <div class="bear">🥺🐻</div>
- <h1>Mujhse galti hui, Manya</h1>
- <div class="card">
-  <p>Manya, main tumse pyaar karta hoon. Mujhe pata hai ki maine tumse jis tarah baat ki, woh bilkul galat tha. Maine gusse mein tumhare liye abusive words use kiye, aur mujhe aisa bilkul nahi karna chahiye tha.</p>
+<!-- Music ke bina main website nahi khulegi -->
+<div id="musicGate">
+ <div class="gate-card">
+  <div class="gate-emoji">🧸💗</div>
+  <h1>Manya, ready ho? 💌</h1>
+  <p>Aage badhne se pehle music on karo. 🎶<br>
+  Tumhare liye kuch dil se likha hai…</p>
+  <button class="btn" id="startBtn" onclick="startExperience()">
+   💗 Play Music & Continue
+  </button>
+  <p id="musicError" style="display:none;color:#b83265;font-size:13px">
+   Music start nahi ho paaya. Dobara button dabao.
+  </p>
  </div>
- <button onclick="go(2)">Aage padhna 💗</button>
+</div>
+
+<button id="musicBtn" onclick="toggleMusic()" style="display:none">
+ 🎵 Pause Music
+</button>
+
+<div class="wrap" id="mainSite" style="display:none">
+
+<section class="page active">
+ <div class="emoji">💌🧸</div>
+ <h1>Manya, ek baar meri baat padh lena…</h1>
+ <p>Mere dil mein jo hai, woh tumse kehna chahta hoon.</p>
+ <p>Ye kuch alfaaz sirf tumhare liye hain. ❤️</p>
+ <button class="btn" onclick="nextPage()">Dil se ek baat… 💗</button>
+ <div class="footer">Made with a sincere heart · Satish</div>
 </section>
 
-<section class="page" id="p2">
- <div class="bear">🧸🌷</div>
- <h1>Tumhe takleef dena galat tha</h1>
- <div class="card">
-  <p>Main apni galti ko kisi bhi bahane se sahi nahi thahrana chahta. Tum mujh par bharosa karti thi, aur mujhe tumse izzat se baat karni chahiye thi. Lekin maine tumhe hi takleef di. Is baat ka mujhe sach mein afsos hai.</p>
-  <p>Sirf sorry bol dene se meri kahi hui baatein wapas nahi ho jaati. Main samajhta hoon ki bharosa dobara banane mein waqt lag sakta hai.</p>
- </div>
- <button onclick="go(3)">Kuch yaadein… 💗</button>
+<section class="page">
+ <div class="emoji">🥺💗</div>
+ <h2>Mujhse galti hui, Manya</h2>
+ <p>Manya, maine gusse mein tumse galat tareeke se baat ki aur aise shabd kahe jo mujhe kabhi nahi kehne chahiye the.</p>
+ <p>Meri galti thi. Main apni baat ko kisi bahane se sahi nahi thahraunga. Mujhe sach mein afsos hai ki meri wajah se tumhe dukh hua.</p>
+ <button class="btn" onclick="nextPage()">Aage padhna… 💌</button>
 </section>
 
-<section class="page" id="p3">
- <div class="bear">💗🌸💗</div>
- <h1>Hamari kuch yaadein</h1>
- <p class="sub">Ye pal mere liye bahut khaas rahe hain, Manya.</p>
+<section class="page">
+ <div class="emoji">🫶🌷</div>
+ <h2>Tum mere liye khaas ho</h2>
+ <p>Hamare saath bitaye hue pal aur hamari achhi yaadein mere liye bahut maayne rakhti hain.</p>
+ <p>Kaash main us waqt apne gusse par control kar paata aur tumse izzat aur pyaar se baat karta.</p>
+ <p>Main sirf sorry kehkar aage nahi badhna chahta. Main apne vyavhaar mein sach mein sudhaar lana chahta hoon.</p>
+ <button class="btn" onclick="nextPage()">Hamari yaadein 📸</button>
+</section>
+
+<section class="page">
+ <div class="emoji">📸💕</div>
+ <h2>Hamari kuch yaadein</h2>
+ <p>In yaadon se jude pal mere liye aaj bhi khaas hain.</p>
  <div class="gallery">
-  <figure><img src="photo1.jpg" alt="Yaad 1"><figcaption>Ek pyaari si yaad ❤️</figcaption></figure>
-  <figure><img src="photo2.jpg" alt="Yaad 2"><figcaption>Hamare pal 💗</figcaption></figure>
-  <figure><img src="photo3.jpg" alt="Yaad 3"><figcaption>Ek aur yaad 🌸</figcaption></figure>
-  <figure><img src="photo4.jpg" alt="Yaad 4"><figcaption>Jo khaas hai 🧸</figcaption></figure>
-  <figure><img src="photo5.jpg" alt="Yaad 5"><figcaption>Yaad rahega ❤️</figcaption></figure>
-  <figure><img src="photo6.jpg" alt="Yaad 6"><figcaption>Dil ke kareeb 💌</figcaption></figure>
+  <img src="photo1.jpg" alt="Hamari yaad 1">
+  <img src="photo2.jpg" alt="Hamari yaad 2">
+  <img src="photo3.jpg" alt="Hamari yaad 3">
+  <img src="photo4.jpg" alt="Hamari yaad 4">
+  <img src="photo5.jpg" alt="Hamari yaad 5">
+  <img src="photo6.jpg" alt="Hamari yaad 6">
  </div>
- <button onclick="go(4)">Ek aakhri baat 💌</button>
+ <p class="caption">Har yaad apni jagah khoobsurat hai. 💗</p>
+ <button class="btn" onclick="nextPage()">Ek chhota sa letter 💌</button>
 </section>
 
-<section class="page" id="p4">
- <div class="bear">🐻💌</div>
- <h1>Tumhare naam ek khat</h1>
- <p class="sub">Envelope par tap karke kholna.</p>
- <div class="envelope" id="env" onclick="openLetter()">
-  <div class="letter">
-   <h3>Dear Manya ❤️</h3>
-   <p style="font-size:13px">Mujhe apni galti ka sach mein afsos hai. — Satish</p>
-  </div>
-  <div class="seal">♥</div>
- </div>
- <p id="hint" class="note">Tap to open 💌</p>
- <button onclick="go(5)">Mera dil kya kehna chahta hai…</button>
+<section class="page">
+ <div class="emoji">✉️🌸</div>
+ <h2>Tumhare naam ek khat</h2>
+ <div class="letter">Dear Manya,
+
+Kabhi-kabhi insaan apne gusse mein unhi logon ko dukh de deta hai jinki use sabse zyada kadar karni chahiye.
+
+Maine bhi galti ki. Main chahta hoon ki tum meri maafi ko sirf shabdon se nahi, balki aane wale waqt mein mere vyavhaar se samajh sako.
+
+Tumhari khushi aur tumhari izzat mere liye maayne rakhti hai.
+
+Dil se sorry, Manya. ❤️
+
+— Satish</div>
+ <button class="btn" onclick="nextPage()">Ek nayi shuruaat… 🌷</button>
 </section>
 
-<section class="page" id="p5">
- <div class="bear">🥹💗</div>
- <h1>Dil se maafi, Manya</h1>
- <div class="card">
-  <p>Maine tumhari har cheez sambhal kar rakhi hai, kyunki tum mere liye bahut khaas ho. Mujhe hamare saath bitaye hue pal yaad aate hain. Tumhare saath baatein karna, chhoti-chhoti baaton par khush hona… mere liye ye sab bahut maayne rakhta tha.</p>
-  <p>Main tumhara intezaar karta rahunga, lekin tum par kisi bhi tarah ka pressure nahi daalunga. Agar tum mujhse baat nahi karna chahti, toh main tumhare faisle ki izzat karunga.</p>
- </div>
- <button onclick="go(6)">Aakhri paighaam ❤️</button>
+<section class="page">
+ <div class="emoji">🤍🌹</div>
+ <h2>Ek Nayi Shuruaat</h2>
+ <div class="letter">Manya, ek aakhri baar hamare rishte ke liye… ❤️
+
+Main jaanta hoon ki meri baaton ne tumhe dukh pahunchaya. Main dil se sharminda hoon. Tum mere liye kitni khaas ho, main apni harkaton se tumhe ye mehsoos nahi kara paaya.
+
+Manya, main tumse dil se guzarish karta hoon ki hamare rishte ko ek aur mauka dene ke baare mein socho. 🥺❤️ Main nahi chahta ki meri galti hamari saari achhi yaadon aur saath bitaye hue palon par bhaari pad jaaye.
+
+Mujhe umeed hai ki agar hum dobara saath aage badhne ka faisla karein, toh apni galtiyon se seekhkar, ek-doosre ko samajhkar aur izzat ke saath apne rishte ko pehle se zyada mazboot bana sakte hain.
+
+Main tumse sirf waade nahi karna chahta. Main apne gusse par control karna, apni baaton ki zimmedari lena aur tumse izzat se baat karna apne vyavhaar mein dikhana chahta hoon.
+
+Please Manya, ek baar phir se soch lo. Main tumhe khona nahi chahta. Tum mere liye aaj bhi bahut khaas ho aur main dil se chahta hoon ki humein apni kahani ko ek naya mauka dene ka avsar mile.
+
+Ek mauka, Manya… taaki main apne kaamon se dikha sakoon ki main apni galti sudharne ke liye sach mein taiyaar hoon. ❤️</div>
+ <button class="btn" onclick="nextPage()">Ek aakhri baat… 💗</button>
 </section>
 
-<section class="page" id="p6">
- <div class="bear">🌷🧸💖</div>
- <h1>Manya, ek nayi shuruaat…</h1>
- <div class="card">
-  <p>Bas ek baat dil se kehna chahta hoon: mujhe maaf kar dena agar kabhi tum kar sako. Main apne gusse aur apne bolne ke tareeke ko sudharna chahta hoon. Sirf tumse kehne ke liye nahi, balki sach mein ek behtar insaan banne ke liye.</p>
-  <p>Maine galti ki hai, aur uski zimmedari meri hai.</p>
-  <p>Manya, agar kabhi tum bhi chaho, toh hum is rishte ko ek naye sire se shuru karne ke baare mein baat kar sakte hain. Main apne badlav ko sirf baaton se nahi, balki apne amal se sabit karna chahta hoon.</p>
-  <p><b>Dil se sorry, Manya. Main tumse pyaar karta hoon. ❤️</b></p>
-  <p>— Satish</p>
- </div>
- <button onclick="go(7)">Ek aakhri baat 💗</button>
+<section class="page">
+ <div class="big-heart">💗</div>
+ <h2>Manya, dil se sorry</h2>
+ <p>Main tumse apne dil ki baat kehna chahta tha. Main chahta hoon ki hamare beech phir se samajh aur bharosa ban sake.</p>
+ <p>Main tumhe ek aur mauka dene ke liye dil se keh raha hoon. Main apni galtiyon ko sudharne ki poori koshish karunga.</p>
+ <p>Hamare rishte ko ek naya mauka mil paaye, ye meri dil se khwahish hai. ❤️</p>
+ <button class="btn" onclick="restart()">Dobara shuru se dekho 💌</button>
+ <div class="footer">Dil se likha · Satish ❤️</div>
 </section>
 
-<section class="page" id="p7">
- <div class="bear">🧸💖🌷</div>
- <h1>Manya, tumhari marzi sabse zaroori hai</h1>
- <p class="sub">Main tumhari feelings aur tumhare faisle ki izzat karunga. Tumhe abhi jawab dene ki zaroorat nahi hai.</p>
- <button onclick="go(0)">Shuru se dobara padho 💌</button>
- <p class="note">Hamesha izzat aur sachchai ke saath — Satish ❤️</p>
-</section>
+<div class="dots" id="pageCount">Page 1 of 7</div>
+</div>
 
 <script>
-function go(n){
- document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
- document.getElementById("p"+n).classList.add("active");
- window.scrollTo(0,0);
+const music = document.getElementById("bgMusic");
+const gate = document.getElementById("musicGate");
+const startBtn = document.getElementById("startBtn");
+const musicError = document.getElementById("musicError");
+const mainSite = document.getElementById("mainSite");
+const musicBtn = document.getElementById("musicBtn");
+const pages = Array.from(document.querySelectorAll(".page"));
+let current = 0;
+
+async function startExperience(){
+ startBtn.disabled = true;
+ startBtn.textContent = "🎵 Music shuru ho raha hai…";
+ musicError.style.display = "none";
+
+ try{
+  await music.play();
+  gate.style.display = "none";
+  mainSite.style.display = "block";
+  musicBtn.style.display = "block";
+  musicBtn.textContent = "🎵 Pause Music";
+ }catch(error){
+  startBtn.disabled = false;
+  startBtn.textContent = "💗 Play Music & Continue";
+  musicError.style.display = "block";
+ }
 }
-function openLetter(){
- document.getElementById("env").classList.add("open");
- document.getElementById("hint").textContent="Dil se likha hua khat ❤️";
+
+function toggleMusic(){
+ if(music.paused){
+  music.play().then(()=>{
+   musicBtn.textContent = "🎵 Pause Music";
+  }).catch(()=>{
+   musicError.style.display = "block";
+  });
+ }else{
+  music.pause();
+  musicBtn.textContent = "🎵 Play Music";
+ }
 }
-const box=document.getElementById("hearts");
-const symbols=["💗","💕","🌸","💖","✨"];
-for(let i=0;i<20;i++){
- let h=document.createElement("span");
- h.className="heart";h.textContent=symbols[i%symbols.length];
- h.style.left=(i*37%100)+"%";
- h.style.fontSize=(16+i%15)+"px";
- h.style.animationDelay=(i%7)+"s";
- h.style.animationDuration=(5+i%5)+"s";
- box.appendChild(h);
+
+function showPage(n){
+ pages[current].classList.remove("active");
+ current = (n + pages.length) % pages.length;
+ pages[current].classList.add("active");
+ document.getElementById("pageCount").textContent =
+  "Page " + (current + 1) + " of " + pages.length;
+ window.scrollTo({top:0,behavior:"smooth"});
 }
+
+function nextPage(){showPage(current+1);}
+function restart(){showPage(0);}
+
+function createHeart(){
+ const heart = document.createElement("div");
+ heart.className = "heart";
+ heart.textContent = ["💗","💕","♡","🌸"][Math.floor(Math.random()*4)];
+ heart.style.left = Math.random()*100 + "vw";
+ heart.style.fontSize = (15+Math.random()*19) + "px";
+ heart.style.animationDuration = (7+Math.random()*7) + "s";
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),15000);
+}
+setInterval(createHeart,750);
 </script>
 </body>
-   </html>
-  
+</html>

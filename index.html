@@ -32,7 +32,7 @@ button{font:inherit;cursor:pointer}
  color:white;font-weight:bold;box-shadow:0 5px 16px #d75c9825;
  margin:8px 3px
 }
-.btn:disabled{opacity:.65}
+.btn:disabled{opacity:.65;cursor:wait}
 #musicBtn{
  position:fixed;right:12px;top:12px;z-index:20;
  border:1px solid #fff;border-radius:30px;background:#ffffffdf;
@@ -72,9 +72,9 @@ p{font-size:16px;line-height:1.9}
 </head>
 <body>
 
-<audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
+<audio id="bgMusic" src="./music.mp3" loop preload="auto"></audio>
 
-<!-- Music ke bina main website nahi khulegi -->
+<!-- Music load aur play hone ke baad hi website khulegi -->
 <div id="musicGate">
  <div class="gate-card">
   <div class="gate-emoji">🧸💗</div>
@@ -85,7 +85,7 @@ p{font-size:16px;line-height:1.9}
    💗 Play Music & Continue
   </button>
   <p id="musicError" style="display:none;color:#b83265;font-size:13px">
-   Music start nahi ho paaya. Dobara button dabao.
+   Music load nahi ho paaya. Internet check karke dobara button dabao.
   </p>
  </div>
 </div>
@@ -184,7 +184,6 @@ Ek mauka, Manya… taaki main apne kaamon se dikha sakoon ki main apni galti sud
  <div class="footer">Dil se likha · Satish ❤️</div>
 </section>
 
-<!-- Page 8: Sachcha Pyaar -->
 <section class="page">
  <div class="emoji">❤️🥹🌹</div>
  <h2>Mera Pyaar Sach Tha, Manya</h2>
@@ -220,16 +219,54 @@ let current = 0;
 
 async function startExperience(){
  startBtn.disabled = true;
- startBtn.textContent = "🎵 Music shuru ho raha hai…";
+ startBtn.textContent = "🎵 Music load ho raha hai…";
  musicError.style.display = "none";
 
- try{
+ try {
+  // Browser ko audio load karne ka mauka do
+  music.preload = "auto";
+
+  // load() ko baar-baar call nahi karna; browser apni buffering sambhalega
+  if (music.readyState === 0) {
+   music.load();
+  }
+
+  // Playback ke liye kuch audio data available hone ka wait
+  if (music.readyState < 3) {
+   await new Promise((resolve, reject) => {
+    let settled = false;
+
+    const cleanup = () => {
+     music.removeEventListener("canplay", onReady);
+     music.removeEventListener("error", onError);
+    };
+
+    const finish = (callback) => {
+     if (settled) return;
+     settled = true;
+     cleanup();
+     callback();
+    };
+
+    const onReady = () => finish(resolve);
+    const onError = () => finish(() => reject(new Error("Music load nahi hua")));
+
+    music.addEventListener("canplay", onReady);
+    music.addEventListener("error", onError);
+
+    // Event listener lagne ke baad state dobara check karo
+    if (music.readyState >= 3) onReady();
+   });
+  }
+
   await music.play();
+
   gate.style.display = "none";
   mainSite.style.display = "block";
   musicBtn.style.display = "block";
   musicBtn.textContent = "🎵 Pause Music";
- }catch(error){
+
+ } catch(error) {
   startBtn.disabled = false;
   startBtn.textContent = "💗 Play Music & Continue";
   musicError.style.display = "block";
@@ -271,7 +308,8 @@ function createHeart(){
  document.body.appendChild(heart);
  setTimeout(()=>heart.remove(),15000);
 }
-setInterval(createHeart,750);
+setInterval(createHeart,2000);
 </script>
 </body>
-</html>
+ </html>
+  
